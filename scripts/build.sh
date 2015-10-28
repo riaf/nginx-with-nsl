@@ -3,15 +3,6 @@
 NGINX="nginx-1.8.0"
 BUILD_DIR="/tmp/build-$NGINX"
 
-echo 'deb http://debian-mirror.sakura.ne.jp/debian jessie main
-deb-src http://debian-mirror.sakura.ne.jp/debian jessie main
-
-deb http://security.debian.org/ jessie/updates main
-deb-src http://security.debian.org/ jessie/updates main
-
-deb http://debian-mirror.sakura.ne.jp/debian jessie-updates main
-deb-src http://debian-mirror.sakura.ne.jp/debian jessie-updates main' > /etc/apt/sources.list
-
 apt-get update
 apt-get install -y dpkg-dev debhelper libssl-dev imagemagick libmagickwand-dev unzip # graphicsmagick-libmagick-dev-compat
 apt-get autoremove -y
