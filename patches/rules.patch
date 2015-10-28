@@ -1,0 +1,24 @@
+--- rules	2015-04-21 15:53:27.000000000 +0000
++++ rules.new	2015-10-28 16:42:41.288009444 +0000
+@@ -52,7 +52,9 @@ override_dh_auto_build:
+ 		$(WITH_SPDY) \
+ 		--with-cc-opt="$(CFLAGS)" \
+ 		--with-ld-opt="$(LDFLAGS)" \
+-		--with-ipv6
++		--with-ipv6 \
++		--with-pcre \
++		--add-module=$(CURDIR)/debian/modules/ngx_small_light-master
+ 	dh_auto_build
+ 
+ configure_debug:
+@@ -91,7 +93,9 @@ configure_debug:
+ 		--with-cc-opt="$(CFLAGS)" \
+ 		--with-ld-opt="$(LDFLAGS)" \
+ 		--with-ipv6 \
+-		--with-debug
++		--with-debug \
++		--with-pcre \
++		--add-module=$(CURDIR)/debian/modules/ngx_small_light-master
+ 
+ override_dh_auto_install:
+ 	dh_auto_install
